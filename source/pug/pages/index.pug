@@ -1,0 +1,19 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Клуб четырёх коней" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+
+    +mainscreen()
+    +lecture()
+    +stage()
+    +slider()
+    +tiker()

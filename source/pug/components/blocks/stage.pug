@@ -1,0 +1,32 @@
+mixin stage()
+  section.stage
+
+    .container
+      h2.title.stage__title.title--h2
+        span Этапы преображения
+        span Васюков&nbsp;
+          span.blue-text Будущие источники обогащения васюкинцев
+      .swiper.stage__swiper
+        .swiper-wrapper.stage__wrapper
+          .swiper-slide.stage__slide
+            p Строительство железнодорожной магистрали Москва-Васюки
+            //- .stage__slide.slide
+            p Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов
+          .swiper-slide.stage__slide
+            p Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет
+          .swiper-slide.stage__slide
+            p Строительство дворца для турнира
+            //- .stage__slide.slide
+            p Размещение гаражей для гостевого автотранспорта
+          .swiper-slide.stage__slide
+            p Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
+          .swiper-slide.stage__slide
+            p Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
+
+
+      +img("content", "helicopter", "png", 377, 140, "Вертолет")
+
+      .stage__nav-btns
+        button.swiper-button-prev.btn.btn--prev.stage__btn-prev
+        button.swiper-button-next.btn.btn--next.stage__btn-next
+      .swiper-pagination.stage__pagination

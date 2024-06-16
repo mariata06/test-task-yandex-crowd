@@ -1,0 +1,54 @@
+mixin slider()
+  section.slider
+
+    .container
+      .swiper.slider__swiper
+        h2.title.slider__title.title--h2 Участники турнира
+        .slider__nav
+          .slider__nav-btns
+            button.btn.btn--prev.swiper-button-prev.slider__btn-prev
+            button.btn.btn--next.swiper-button-next.slider__btn-next
+            .swiper-pagination.slider__pagination
+        .swiper-wrapper.slider__container.mySwiper
+          .swiper-slide.slider__slide
+            figure
+              +img("content", "champion-picture", "png", 320, 320, "champion picture")
+              //- +icon("champion-picture", 320, 320)
+              figcaption.slider__slide-name Хозе-Рауль Капабланка
+                p.slider__slide-title Чемпион мира по шахматам
+            a(href="#").button.btn.btn--blue-border.slider__slide-btn Подробнее
+          .swiper-slide.slider__slide
+            figure
+              +img("content", "champion-picture", "png", 320, 320, "champion picture")
+              //- +icon("champion-picture", 320, 320)
+              figcaption.slider__slide-name Эммануил Ласкер
+                p.slider__slide-title Чемпион мира по шахматам
+            a(href="#").button.btn.btn--blue-border.slider__slide-btn Подробнее
+          .swiper-slide.slider__slide
+            figure
+              +img("content", "champion-picture", "png", 320, 320, "champion picture")
+              //- +icon("champion-picture", 320, 320)
+              figcaption.slider__slide-name Александр Алехин
+                p.slider__slide-title Чемпион мира по шахматам
+            a(href="#").button.btn.btn--blue-border.slider__slide-btn Подробнее
+          .swiper-slide.slider__slide
+            figure
+              +img("content", "champion-picture", "png", 320, 320, "champion picture")
+              //- +icon("champion-picture", 320, 320)
+              figcaption.slider__slide-name Арон Нимцович
+                p.slider__slide-title Чемпион мира по шахматам
+            a(href="#").button.btn.btn--blue-border.slider__slide-btn Подробнее
+          .swiper-slide.slider__slide
+            figure
+              +img("content", "champion-picture", "png", 320, 320, "champion picture")
+              //- +icon("champion-picture", 320, 320)
+              figcaption.slider__slide-name Рихард Рети
+                p.slider__slide-title Чемпион мира по шахматам
+            a(href="#").button.btn.btn--blue-border.slider__slide-btn Подробнее
+          .swiper-slide.slider__slide
+            figure
+              +img("content", "champion-picture", "png", 320, 320, "champion picture")
+              //- +icon("champion-picture", 320, 320)
+              figcaption.slider__slide-name Остап Бендер
+                p.slider__slide-title Чемпион мира по шахматам
+            a(href="#").button.btn.btn--blue-border.slider__slide-btn Подробнее

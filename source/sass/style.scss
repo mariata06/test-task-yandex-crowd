@@ -1,0 +1,34 @@
+// Vendor
+// ---------------------------------
+
+@import "vendor/normalize";
+// Swiper 11.1.4
+@import "vendor/swiper2";
+
+// Global
+// ---------------------------------
+
+@import "variables";
+@import "mixins";
+@import "global/fonts";
+@import "global/reboot";
+@import "global/utils";
+@import "global/container";
+
+// Blocks
+// ---------------------------------
+
+@import "blocks/footer";
+@import "blocks/btn";
+@import "blocks/mainscreen";
+@import "blocks/tiker";
+@import "blocks/lecture";
+@import "blocks/blue-text";
+@import "blocks/red-text";
+@import "blocks/stage";
+@import "blocks/title";
+@import "blocks/slider";
+@import "blocks/text-crossed";
+@import "blocks/table";
+
+// ---------------------------------

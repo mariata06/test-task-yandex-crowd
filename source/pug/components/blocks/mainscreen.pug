@@ -1,0 +1,28 @@
+mixin mainscreen()
+  section.mainscreen
+
+    .mainscreen__bg
+      //- +picture(content, image, format, width, height, altText)
+      picture
+        source(media="(max-width: 767px)"	srcset="img/content/main_375.png" alt="Main screen image")
+        source(media="(max-width: 1366px)"	srcset="img/content/main_1366.png" alt="Main screen image")
+        img(src="img/content/mainscreen_img.png" width=1920 height=700 alt="Main screen image").background-image
+        //- +img("content", "mainscreen_img", "png", 1920, 700, "Main screen image")
+    .container
+
+      .mainscreen__logo
+
+          +icon("logo-club", 245, 36)
+
+      .mainscreen__content
+        .mainscreen__text
+          h1.mainscreen__title.title.title--h1
+            span.mainscreen__title-left Превратите уездный город
+            span.mainscreen__title-center в&nbsp;столицу земного шара
+
+          p.mainscreen__paragraph Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам
+
+        .mainscreen__btn-container
+          button.btn.btn--black-bg.mainscreen__btn(type="button") Поддержать шахматную мысль
+          button.btn.btn--black-border.mainscreen__btn(type="button") Подробнее о&nbsp;турнире
+    +tiker()

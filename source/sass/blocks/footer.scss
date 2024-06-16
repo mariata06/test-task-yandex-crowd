@@ -1,0 +1,20 @@
+.footer {
+  padding: 40px 0 72px;
+  background-color: #E9DED4;
+  user-select: none;
+
+  &__paragraph {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #313131;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 40px 0 60px;
+  }
+}

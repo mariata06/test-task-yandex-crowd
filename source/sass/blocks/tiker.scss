@@ -1,0 +1,63 @@
+.tiker {
+  height: 60px;
+  background-color: #f54932;
+  font-family: "merriweather", "Arial", sans-serif;
+  font-weight: 400;
+  user-select: none;
+
+  &__text {
+    width: 200%;
+    margin: 0;
+  }
+
+  &__text span {
+    font-size: 22px;
+    line-height: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 0 15px;
+    position: relative;
+  }
+
+  &__text span:after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 100px;
+    background-color: #fff;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    right: -4px;
+    top: 37%;
+  }
+}
+
+.tiker__marquee {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 60px;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.tiker__track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

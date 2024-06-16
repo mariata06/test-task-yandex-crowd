@@ -1,0 +1,15 @@
+.blue-text {
+  color: #3057A2;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: "golos-text", "Arial", sans-serif;
+  letter-spacing: normal;
+  user-select: none;
+}
+
+@media (max-width: 1280px) {
+  .blue-text {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
