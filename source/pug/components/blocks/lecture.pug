@@ -1,7 +1,6 @@
 mixin lecture()
   section.lecture
-    //- вставлять блоки во внешний контейнер неверно
-    //- все блоки содержат в себе container без доп класса tutorial__wrapper
+    h2.visually-hidden Лекция на тему шахмат и сеанс игры
     .container
       .lecture__top
 
@@ -11,9 +10,6 @@ mixin lecture()
             +img("content", "many_chees_players", "jpg", 394, 250, "Игроки")
             span посетите лекцию на тему:&nbsp;
             span.red-text «Плодотворная дебютная идея»
-
-        //- +img("content", "many_chees_players", "jpg", 394, 250, "Игроки")
-
 
       .lecture__bottom
 
