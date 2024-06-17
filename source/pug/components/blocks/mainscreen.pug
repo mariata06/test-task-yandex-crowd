@@ -4,14 +4,14 @@ mixin mainscreen()
     .mainscreen__bg
       //- +picture(content, image, format, width, height, altText)
       picture
-        source(media="(max-width: 767px)"	srcset="img/content/main_375@2x.png 2x")
-        source(media="(max-width: 1366px)"	srcset="img/content/main_1366@2x.png 2x")
-        img(src="img/content/mainscreen_img.png" width=1920 height=700 alt="Main screen image").background-image
+        source(media="(max-width: 767px)"	srcset="img/content/main_375@2x.webp 2x")
+        source(media="(max-width: 1366px)"	srcset="img/content/main_1366@2x.webp 2x")
+        img(src="img/content/mainscreen_img@2x.webp" width=1920 height=700 alt="Main screen image").background-image
         //- +img("content", "mainscreen_img", "png", 1920, 700, "Main screen image")
     .container
 
-      +logo()
-        +icon("logo-club", 245, 36)
+      .mainscreen__logo
+        +logo()
 
       .mainscreen__content
         .mainscreen__text

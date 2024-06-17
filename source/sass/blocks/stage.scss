@@ -4,11 +4,17 @@
   position: relative;
 }
 
+.stage .container {
+  position: relative;
+}
+
 .stage .container img {
   z-index: 1000;
   position: absolute;
   bottom: 50px;
+  bottom: 0;
   right: 100px;
+  right: -70px;
 }
 
 .stage__title {
@@ -81,7 +87,7 @@
 
 .stage__wrapper>.stage__slide:nth-child(2) {
   grid-row: span 2;
-  background-image: url("../../img/content/cooper-stamp-paper-bg.png");
+  background-image: url("../../img/content/cooper-stamp-paper-bg.webp");
   background-repeat: repeat;
 }
 
@@ -100,7 +106,7 @@
 }
 
 .stage__slide .stage__slide-paragraph {
-  background-image: url("../../img/content/cooper-stamp-paper-bg.png");
+  background-image: url("../../img/content/cooper-stamp-paper-bg.webp");
   background-repeat: repeat;
   height: 100%;
   font-size: 20px;
@@ -208,7 +214,7 @@
   }
 
   .swiper.stage__swiper {
-    height: 550px;
+    // height: 550px;
   }
 
   .stage__nav-btns,
@@ -312,8 +318,9 @@
 
   .stage__wrapper>.stage__slide {
     width: 100%;
-    max-height: 300px;
-    background-image: url("../../img/content/cooper-stamp-paper_mobile@3x.png");
+    min-height: 300px;
+    justify-content: flex-start;
+    background-image: url("../../img/content/cooper-stamp-paper_mobile@3x.webp");
     background-repeat: repeat;
   }
 

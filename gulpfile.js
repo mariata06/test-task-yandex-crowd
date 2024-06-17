@@ -6,6 +6,13 @@ import {copy, copyImages, copySvg} from './gulp/copyAssets.mjs';
 import compileScripts from './gulp/compileScripts.mjs';
 import {optimizeSvg, sprite, createWebp, createAvif, optimizePng, optimizeJpg} from './gulp/optimizeImages.mjs';
 import pug from './gulp/compilePug.mjs';
+import webpHtml from 'gulp-webp-html';
+
+const replaceImagesInHtml = () => {
+  return gulp.src('source/*.html')
+    .pipe(webpHtml())
+    .pipe(gulp.dest('build/'));
+};
 
 const server = browserSync.create();
 const streamStyles = () => compileStyles().pipe(server.stream());
@@ -18,7 +25,6 @@ const refresh = (done) => {
 const syncServer = () => {
   server.init({
     server: 'build/',
-    // index: 'sitemap.html',
     index: 'index.html',
     notify: false,
     open: true,
@@ -39,10 +45,10 @@ const syncServer = () => {
   gulp.watch('source/*.php', gulp.series(copy, refresh));
 };
 
-const build = gulp.series(clean, copy, sprite, gulp.parallel(compileMinStyles, compileScripts, pug));
-const dev = gulp.series(clean, copy, sprite, gulp.parallel(compileMinStyles, compileScripts, pug, optimizePng, optimizeJpg, optimizeSvg), syncServer);
-const start = gulp.series(clean, copy, sprite, gulp.parallel(compileStyles, compileScripts, pug), syncServer);
-const nomin = gulp.series(clean, copy, sprite, gulp.parallel(compileStyles, compileScripts, pug, optimizePng, optimizeJpg, optimizeSvg));
+const build = gulp.series(clean, copy, sprite, gulp.parallel(compileMinStyles, compileScripts, pug, createWebp), replaceImagesInHtml);
+const dev = gulp.series(clean, copy, sprite, gulp.parallel(compileMinStyles, compileScripts, pug, optimizePng, optimizeJpg, optimizeSvg, createWebp), replaceImagesInHtml, syncServer);
+const start = gulp.series(clean, copy, sprite, gulp.parallel(compileStyles, compileScripts, pug, createWebp), replaceImagesInHtml, syncServer);
+const nomin = gulp.series(clean, copy, sprite, gulp.parallel(compileStyles, compileScripts, pug, optimizePng, optimizeJpg, optimizeSvg, createWebp), replaceImagesInHtml);
 
 
 const optimize = gulp.series(gulp.parallel(optimizePng, optimizeJpg, optimizeSvg));

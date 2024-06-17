@@ -2,6 +2,12 @@
   min-height: 700px;
   position: relative;
 
+  &__logo {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 10px;
+  }
+
   .container {
     position: relative;
     min-height: 700px;

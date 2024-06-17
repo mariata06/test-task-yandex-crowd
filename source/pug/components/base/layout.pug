@@ -10,27 +10,18 @@ html(lang="ru")
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    meta(name="description", content="Клуб четырёх коней")
-    //- генерируйте favicon тут - https://realfavicongenerator.net/
-    //- в подключение фавикон манифеста обязательно добавьте строчки crossorigin="use-credentials"
-    //- используйте только для шрифта находящегося на первом экране
+    meta(name="description", content="Международный Васюкинский турнир по шахматам")
+    link(rel="icon", href="img/content/favicon.ico")
+    link(rel="apple-touch-icon" sizes="180x180" href="img/content/apple-touch-icon.webp")
+    link(rel="icon" type="image/webp" sizes="32x32" href="img/content/favicon-32x32.webp")
+    link(rel="icon" type="image/webp" sizes="16x16" href="img/content/favicon-16x16.webp")
+    link(rel="manifest" href="img/content/site.webmanifest" crossorigin="use-credentials")
+    link(rel="mask-icon" href="img/content/safari-pinned-tab.svg" color="#5bbad5")
+    meta(name="msapplication-TileColor" content="#da532c")
+    meta(name="theme-color" content="#ffffff")
     link(rel="preload", href="fonts/merriweather-regular.woff2", as="font", crossorigin="anonymous")
     link(rel="preload", href="fonts/golos-text-regular.woff2", as="font", crossorigin="anonymous")
     link(rel="preload", href="fonts/golos-text-medium.woff2", as="font", crossorigin="anonymous")
-    //- При необходимости вы можете добавить разметку Open graf. - const Open graf = true
-    if (openGraf)
-      //- Обязательно измените содержание контента на тот что необходим!
-      //- Введите заголовок
-      meta(property="og:title", content="Лига решений")
-      //- Введите заголовок путь к картинке
-      meta(property="og:image", content="https://24fortest.ru/img/content/sharing.png")
-      //- Введите необходимый тип
-      meta(property="og:type", content="article")
-      //- Введите адрес сайта
-      meta(property="og:url", content="https://24fortest.ru/")
-      //- Введите описание
-      meta(property="og:description", content="Простые и понятные решения в помощь разработчикам от команды Лига А")
-
     link(rel="stylesheet", href="css/style.min.css")
 
   body

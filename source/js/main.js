@@ -1,15 +1,9 @@
-import {mobileVhFix} from './utils/mobile-vh-fix.js';
 import {initChampionSlider} from './modules/init-champion-slider.js';
 import {swiperMode} from './modules/init-stage-slider.js';
 
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
-
-  // Utils
-  // ---------------------------------
-
-  mobileVhFix();
 
   // Modules
   // ---------------------------------
