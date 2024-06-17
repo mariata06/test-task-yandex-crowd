@@ -4,42 +4,11 @@
   position: relative;
 }
 
-@media (max-width: 1279px) {
-  .stage {
-    padding-top: 50px;
-  }
-}
-
 .stage .container img {
   z-index: 1000;
   position: absolute;
   bottom: 50px;
   right: 100px;
-}
-
-@media (max-width: 1439px) {
-  .stage .container img {
-    right: -50px;
-    right: 25px;
-    bottom: 75px;
-  }
-}
-
-@media (max-width: 1365px) {
-  .stage .container img {
-    right: 0;
-    bottom: -25px;
-  }
-}
-
-@media (max-width: 1279px) {
-  .stage .container img {
-    position: absolute;
-    bottom: 0;
-    z-index: 1000;
-    right: 0px;
-    width: 300px;
-  }
 }
 
 .stage__title {
@@ -61,114 +30,76 @@
   align-items: center;
 }
 
+.stage__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stage__wrapper .stage__slide-paragraph {
+  counter-increment: paragraph;
+  position: relative;
+}
+
+.stage__wrapper {
+  counter-reset: paragraph;
+}
+
+.stage__wrapper .stage__slide-paragraph::before {
+  content: counter(paragraph);
+  font-family: "golos-text", "Arial", sans-serif;
+  font-size: 20px;
+  line-height: 120%;
+  font-weight: 600;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .stage__slide {
-  background-color: #fff;
-  background-image: url("../../img/content/cooper-stamp-paper-bg.png");
-  background-repeat: repeat;
+  position: relative;
+  font-size: 20px;
+  min-height: 112px;
 }
 
-.stage__wrapper > .stage__slide:nth-child(5) p {
-  padding-right: 450px;
-}
-
-.stage__nav-btns,
-.stage__pagination {
-  display: none;
-  min-height: 60px;
-}
-
-@media (max-width: 1689px) {
-  .stage__wrapper>.stage__slide:nth-child(5) p {
-    padding-right: 400px;
-  }
-}
-
-@media (max-width: 1439px) {
-  .stage__wrapper>.stage__slide:nth-child(5) p {
-    padding-right: 350px;
-  }
-}
-
-@media (max-width: 1365px) {
-  .stage__wrapper>.stage__slide:nth-child(5) p {
-    padding-right: 280px;
-  }
-}
-
-@media (max-width: 1023px) {
-  .stage__slide::after {
-    top: 10px;
-    left: 10px;
-  }
-
-  .stage .container img {
-    width: 280px;
-  }
-}
-
-@media (max-width: 767px) {
-  .stage__title {
-    align-items: baseline;
-  }
-
-  .stage__title span:last-child {
-    flex-direction: column;
-  }
-
-  .swiper.stage__swiper {
-    height: 550px;
-  }
-
-  .stage__nav-btns,
-  .stage__pagination {
-    min-height: 36px;
-  }
-
-  .swiper-pagination.stage__pagination {
-    width: 74px;
-  }
-}
-
-.stage__wrapper > .stage__slide:nth-child(1) {
+.stage__wrapper>.stage__slide:nth-child(1),
+.stage__wrapper>.stage__slide:nth-child(3) {
   grid-column: span 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-.stage__wrapper > .stage__slide:nth-child(2) {
+.stage__wrapper>.stage__slide:nth-child(2) {
   grid-row: span 2;
   background-image: url("../../img/content/cooper-stamp-paper-bg.png");
   background-repeat: repeat;
 }
 
-.stage__wrapper > .stage__slide:nth-child(3) {
-  grid-column: span 2;
-  // grid-row: unset;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.stage__wrapper > :nth-child(4) {
+.stage__wrapper>.stage__slide:nth-child(4) {
   grid-column: span 1;
   grid-row: span 1;
 }
 
-.stage__wrapper > :nth-child(5) {
+.stage__wrapper>.stage__slide:nth-child(5) {
   grid-column: span 2;
   grid-row: span 1;
 }
 
-.stage__slide::after {
-  display: none;
+.stage__wrapper>.stage__slide:nth-child(5) p {
+  padding-right: 450px;
 }
 
-.stage__slide {
-  background-image: none;
-}
-
-.stage__slide p {
+.stage__slide .stage__slide-paragraph {
   background-image: url("../../img/content/cooper-stamp-paper-bg.png");
   background-repeat: repeat;
   height: 100%;
@@ -190,115 +121,99 @@
   left: unset;
   top: unset;
   right: unset;
+  position: relative;
+  z-index: 1000;
+}
+
+.stage__nav-btns,
+.stage__pagination {
+  display: none;
+  min-height: 60px;
+}
+
+@media (max-width: 1689px) {
+  .stage__wrapper>.stage__slide:nth-child(5) .stage__slide-paragraph {
+    padding-right: 400px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .stage .container img {
+    right: -50px;
+    right: 25px;
+    bottom: 75px;
+  }
+
+  .stage__wrapper>.stage__slide:nth-child(5) .stage__slide-paragraph {
+    padding-right: 330px;
+  }
+}
+
+@media (max-width: 1365px) {
+  .stage .container img {
+    right: 0;
+    bottom: -25px;
+  }
+
+  .stage__wrapper>.stage__slide:nth-child(5) .stage__slide-paragraph {
+    padding-right: 280px;
+  }
 }
 
 @media (max-width: 1279px) {
+  .stage {
+    padding-top: 50px;
+  }
+
+  .stage .container img {
+    position: absolute;
+    bottom: 0;
+    z-index: 1000;
+    right: 0px;
+    width: 300px;
+  }
+
   .stage__slide p {
     padding-left: 60px;
   }
 }
 
-.stage__wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.stage__slide {
-  position: relative;
-}
-
-.stage__slide {
-  background-color: #f0f0f0;
-  font-size: 20px;
-  min-height: 112px;
-}
-
-.stage__wrapper p {
-  counter-increment: paragraph;
-  position: relative;
-}
-
-.stage__wrapper {
-  counter-reset: paragraph;
-}
-
-.stage__wrapper p::before {
-  content: counter(paragraph);
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: #333;
-  color: #fff;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.stage__grid:nth-child(3) {
-  grid-row: span 2;
-}
-
-.stage__grid:nth-child(7) {
-  grid-column: span 2;
-}
-
-.stage__swiper {
-  text-align: center;
-}
-
 @media (max-width: 1023px) {
-  .stage__slide p {
+  .stage__slide::after {
+    top: 10px;
+    left: 10px;
+  }
+
+  .stage .container img {
+    width: 280px;
+  }
+
+  .stage__slide .stage__slide-paragraph {
     font-size: 16px;
+    padding-left: 60px;
+  }
+
+  .stage__wrapper>.stage__slide:nth-child(5) .stage__slide-paragraph {
+    padding-right: 250px;
   }
 }
 
 @media (max-width: 767px) {
-  .stage {
-    padding-bottom: 60px;
-  }
-  .stage__wrapper .stage__slide p {
-    height: 50%;
+  .stage__title {
+    align-items: baseline;
   }
 
-  .stage__slide {
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    height: auto;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    margin: 0;
+  .stage__title span:last-child {
+    flex-direction: column;
   }
 
-  .stage__wrapper p::before {
-    content: counter(paragraph);
-    position: absolute;
-    top: 60px;
-  }
-
-  .stage__wrapper {
-    gap: 0;
-  }
-
-  .swiper-slide.stage__slide {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  .stage__wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  .swiper.stage__swiper {
+    height: 550px;
   }
 
   .stage__nav-btns,
   .stage__pagination {
+    min-height: 36px;
     display: flex;
   }
 
@@ -306,6 +221,8 @@
     width: 178px;
     justify-content: space-between;
     margin: 0 auto;
+    position: relative;
+    z-index: 1000;
   }
 
   .stage__pagination {
@@ -315,21 +232,14 @@
 
   .swiper-pagination.stage__pagination {
     width: 100%;
-    height: 50px;
     display: flex;
     height: 10px;
-    position: absolute;
     bottom: 10px;
     z-index: 900;
     position: absolute;
   }
 
-  .stage__nav-btns {
-    position: relative;
-    z-index: 1000;
-  }
-
-  .swiper-pagination.stage__pagination  .swiper-pagination-bullet {
+  .swiper-pagination.stage__pagination .swiper-pagination-bullet {
     display: block;
     width: 10px;
     height: 10px;
@@ -342,11 +252,51 @@
     background-color: #313131;
   }
 
+  .stage__slide .stage__slide-paragraph {
+    background-image: none;
+  }
+
+  .stage {
+    padding-bottom: 60px;
+  }
+
+  .stage__wrapper .stage__slide .stage__slide-paragraph {
+    height: 50%;
+    font-size: 18px;
+  }
+
+  .stage__slide .stage__slide-paragraph {
+    height: 50%;
+    font-size: 18px;
+  }
+
+  .stage__slide {
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    height: auto;
+    margin: 0;
+  }
+
+  .swiper-slide.stage__slide {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .stage__wrapper .stage__slide-paragraph::before {
+    content: counter(paragraph);
+    position: absolute;
+    top: 60px;
+  }
+
   .stage__wrapper {
+    gap: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     padding-top: 150px;
     padding-bottom: 150px;
-    display: flex;
-    flex-wrap: nowrap;
   }
 
   .stage .container img {
@@ -363,24 +313,24 @@
   .stage__wrapper>.stage__slide {
     width: 100%;
     max-height: 300px;
-    background-image: url("../../img/content/cooper-stamp-paper-bg.png");
+    background-image: url("../../img/content/cooper-stamp-paper_mobile@3x.png");
     background-repeat: repeat;
   }
 
-  .stage__wrapper>.stage__slide p {
+  .stage__wrapper>.stage__slide .stage__slide-paragraph {
     width: 100%;
     padding-top: 60px;
   }
 
   .stage__wrapper>.stage__slide p:not(:first-child) {
     width: 100%;
-    padding-top: 30px;
+    padding-top: 20px;
   }
 
   .stage__wrapper > .stage__slide p:not(:first-child)::before {
     content: counter(paragraph);
     position: absolute;
-    top: 30px;
+    top: 20px;
   }
 
   .stage__wrapper> .stage__slide:nth-child(1),
@@ -392,7 +342,7 @@
     width: 100%;
   }
 
-  .stage__wrapper> :nth-child(5) p {
+  .stage__wrapper> .stage__slide:nth-child(5) .stage__slide-paragraph {
     padding-right: unset
   }
 
@@ -400,27 +350,21 @@
     width: 100%;
   }
 
-  .swiper-slide {
-    display: flex;
-    background: #f0f0f0;
-  }
-
   .stage__title span:last-child {
     align-items: baseline;
   }
 
-  .stage__wrapper .stage__slide p {
+  .stage__wrapper .stage__slide .stage__slide-paragraph {
     padding-left: 70px;
   }
 
-  .stage__wrapper>.stage__slide:nth-child(5) p {
+  .stage__wrapper>.stage__slide:nth-child(5) .stage__slide-paragraph {
     padding-right: 20px;
   }
 }
 
-
 @media (max-width: 375px) {
-  .stage__slide p {
+  .stage__slide .stage__slide-paragraph {
     font-size: 18px;
   }
 }
