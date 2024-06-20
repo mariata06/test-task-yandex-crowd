@@ -1,7 +1,7 @@
 .lecture {
   padding: 80px 0 100px;
 
-  &__paragraph {
+  &__wrapper, &__paragraph {
     font-family: "merriweather", Arial, sans-serif;
     font-size: 36px;
     line-height: 49px;
@@ -12,6 +12,20 @@
     margin-top: 27px;
     margin-bottom: 27px;
     user-select: none;
+  }
+
+  &__wrapper .red-text,
+  &__paragraph .red-text {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  &__wrapper span:nth-child(2n) {
+    display: inline-block;
+  }
+
+  &__paragraph span:last-child {
+    display: block;
   }
 
   &__link {
@@ -28,12 +42,12 @@
     justify-content: space-around;
   }
 
-  &__top &__paragraph {
+  &__top &__wrapper {
     width: 764px;
   }
 
   &__bottom table {
-    width: 100%;
+    max-width: 705px;
   }
 
   &__bottom &__paragraph {
@@ -61,31 +75,25 @@
     width: unset;
   }
 
-  &__bottom img {
-    height: 100%;
-  }
-
   &__note {
     font-size: 20px;
     line-height: 24px;
     font-weight: 400;
   }
+
+  .lecture__bottom img {
+    object-fit: contain;
+    margin-bottom: 60px;
+  }
 }
 
 @media (max-width: 1279px) {
-  .lecture__bottom img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    height: 450px;
-    object-fit: contain;
-  }
-
   .lecture__bottom .lecture__text {
     width: 50%;
   }
 
-  .lecture__paragraph {
+  .lecture__paragraph,
+  .lecture__wrapper {
     font-size: 30px;
     line-height: 40px;
   }
@@ -101,16 +109,12 @@
   }
 }
 
-
-
-
-
 @media (max-width: 1365px) {
   .lecture__top img {
     right: 0;
   }
 
-  .lecture__top .lecture__paragraph {
+  .lecture__top .lecture__wrapper {
     width: 60%;
   }
 
@@ -122,11 +126,19 @@
   .lecture__bottom .lecture__paragraph {
     width: 100%;
   }
+
+    .lecture__paragraph span:last-child {
+      display: inline;
+    }
 }
 
 @media (max-width: 1279px) {
   .lecture {
     padding-bottom: 50px;
+  }
+
+  .lecture__paragraph span:last-child {
+    display: inline;
   }
 }
 
@@ -140,7 +152,18 @@
     margin-top: 0;
   }
 
-  .lecture__top .lecture__paragraph,
+  .lecture .lecture__bottom img,
+  .lecture__top {
+    margin-bottom: 30px;
+  }
+
+  .lecture__paragraph .red-text,
+  .lecture__wrapper span:nth-child(2n) {
+    display: block;
+    margin: 0;
+  }
+
+  .lecture__top .lecture__wrapper,
   .lecture__bottom .lecture__paragraph {
     width: 70%;
     margin: 20px auto;
@@ -159,7 +182,7 @@
 }
 
 @media (max-width: 767px) {
-  .lecture__top .lecture__paragraph {
+  .lecture__top .lecture__wrapper {
     width: 100%;
     text-align: left;
     font-size: 28px;

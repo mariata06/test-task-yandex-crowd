@@ -1,5 +1,6 @@
 const initChampionSlider = () => {
   const championSlider = new Swiper('.slider__swiper', {
+    autoHeight: true, //enable auto height
     pagination: {
       el: '.swiper-pagination',
       type: 'fraction',

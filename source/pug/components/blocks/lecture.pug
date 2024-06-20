@@ -5,21 +5,21 @@ mixin lecture()
       .lecture__top
 
         .lecture__text
-          p.lecture__paragraph
-            | Чтобы поддержать Международный васюкинский турнир&nbsp;
-            +img("content", "many_chees_players", "webp", 394, 250, "Игроки")
-            span посетите лекцию на тему:&nbsp;
+          .lecture__wrapper
+            span Чтобы поддержать Международный васюкинский турнир&nbsp;
+            +img("content", "many_chees_players", "webp", "Игроки")
+            span посетите лекцию на тему:
             span.red-text «Плодотворная дебютная идея»
 
       .lecture__bottom
 
-        +img("content", "bender_new", "webp", 530, 568, "Пример")
+        +img("content", "bender_new", "webp", "Остап Бендер")
 
         .lecture__text
           p.lecture__paragraph
             span и&nbsp;Сеанс
             span.red-text одновременной игры в&nbsp;шахматы&nbsp;на 160 досках
-            | гроссмейстера О. Бендера
+            span гроссмейстера О. Бендера
 
           +table()
 

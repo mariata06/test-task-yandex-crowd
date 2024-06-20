@@ -2,12 +2,10 @@ mixin mainscreen()
   section.mainscreen
 
     .mainscreen__bg
-      //- +picture(content, image, format, width, height, altText)
       picture
         source(media="(max-width: 767px)"	srcset="img/content/main_375@2x.webp 2x")
         source(media="(max-width: 1366px)"	srcset="img/content/main_1366@2x.webp 2x")
-        img(src="img/content/mainscreen_img@2x.webp" width=1920 height=700 alt="Main screen image").background-image
-        //- +img("content", "mainscreen_img", "png", 1920, 700, "Main screen image")
+        img(src="img/content/mainscreen_img@2x.webp" alt="Main screen image").background-image
     .container
 
       .mainscreen__logo
